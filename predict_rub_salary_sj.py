@@ -16,12 +16,16 @@ def predict_rub_salary_sj(language_names):
     languages = {}
     for text in language_names:
         vacancies = []
+        count = 100
+        page = 5
+        period = 30
+        town_id = 4
         payLoad = {
             'keyword': text,
-            'count': 100,
-            'page': 5,
-            'period': 30,
-            'town': 4
+            'count': count,
+            'page': page,
+            'period': period,
+            'town': town_id
         }
         response = requests.get(url, params=payLoad, headers=header)
         response.raise_for_status()

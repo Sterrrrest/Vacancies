@@ -9,6 +9,7 @@ def predict_rub_salary_hh(language_names):
     for text in language_names:
         url = 'https://api.hh.ru/vacancies'
         area = '1'
+        period = 30
         header = {'HH-User-Agent': ''}
         page = 0
         pages_number = 1
@@ -17,7 +18,7 @@ def predict_rub_salary_hh(language_names):
             payLoad = {'page': page,
               'text': text,
               'area': area,
-              'period': 30}
+              'period': period}
             response = requests.get(url, params=payLoad, headers=header)
             response.raise_for_status()
             page_payload = response.json()

@@ -1,7 +1,7 @@
 from terminaltables import AsciiTable
 
 
-def table(languages, language_names, title):
+def get_table(languages, language_names, title):
     final_table = [('Язык программирования',
                     'Вакансий найдено',
                     'Вакансий обработано',
