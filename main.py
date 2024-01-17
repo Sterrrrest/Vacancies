@@ -1,9 +1,16 @@
+import os
+
+
 from functions import get_table
 from predict_rub_salary_sj import predict_rub_salary_sj
 from predict_rub_salary_hh import predict_rub_salary_hh
+from dotenv import load_dotenv, find_dotenv
 
 
 if __name__ == '__main__':
+
+    load_dotenv(find_dotenv())
+    token_api = os.environ['SUPER_JOB_KEY']
 
     language_names = [
       'программист Python',
@@ -17,4 +24,4 @@ if __name__ == '__main__':
     ]
 
     get_table(predict_rub_salary_hh(language_names), language_names, title='HeadHunter Moscow')
-    get_table(predict_rub_salary_sj(language_names), language_names, title='SuperJob Moscow')
+    get_table(predict_rub_salary_sj(language_names, token_api), language_names, title='SuperJob Moscow')

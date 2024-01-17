@@ -1,15 +1,12 @@
 import requests
-import os
 
 
 from statistics import mean
-from dotenv import load_dotenv, find_dotenv
+
 from functions import predict_rub_salary
 
 
-def predict_rub_salary_sj(language_names):
-    load_dotenv(find_dotenv())
-    token_api = os.environ['SUPER_JOB_KEY']
+def predict_rub_salary_sj(language_names, token_api):
     url = 'https://api.superjob.ru/2.0/vacancies/'
     header = {'X-Api-App-Id': token_api}
     salaries = []
@@ -31,8 +28,8 @@ def predict_rub_salary_sj(language_names):
         response.raise_for_status()
         page_payload = response.json()
         for vacancy in page_payload['objects']:
-            if ((vacancy['payment_from'] or
-                 vacancy['payment_to'])) != 0 and vacancy['currency'] == 'rub':
+            if (vacancy['payment_from'] or
+                 vacancy['payment_to']) and vacancy['currency'] == 'rub':
                 vacancies.append(predict_rub_salary(vacancy['payment_from'], vacancy['payment_to']))
         average_payments = int(mean(vacancies))
         salaries.append(average_payments)
