@@ -23,5 +23,5 @@ if __name__ == '__main__':
       'программист C'
     ]
 
-    get_table(predict_rub_salary_hh(language_names), language_names, title='HeadHunter Moscow')
-    get_table(predict_rub_salary_sj(language_names, token_api), language_names, title='SuperJob Moscow')
+    print(get_table(predict_rub_salary_hh(language_names), language_names, title='HeadHunter Moscow'))
+    print(get_table(predict_rub_salary_sj(language_names, token_api), language_names, title='SuperJob Moscow'))

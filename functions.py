@@ -13,8 +13,6 @@ def get_table(languages, language_names, title):
 
     table_instance = AsciiTable(final_table, title)
     table_instance.justify_columns[2] = 'right'
-    print(table_instance.table)
-    print()
 
 
 def predict_rub_salary(min_salary, max_salary):
