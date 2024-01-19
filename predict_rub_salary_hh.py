@@ -29,9 +29,9 @@ def predict_rub_salary_hh(vacancies_language_names):
             page += 1
         average_payments = int(mean(vacancies))
         language = {
-                  'vacancies_found': page_payload['found'],
-                  'vacancies_processed': len(vacancies),
-                  'average_salary': average_payments
-                }
+            'vacancies_found': page_payload['found'],
+            'vacancies_processed': len(vacancies),
+            'average_salary': average_payments
+        }
         languages[text] = language
     return languages

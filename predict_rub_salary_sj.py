@@ -37,6 +37,6 @@ def predict_rub_salary_sj(vacancies_language_names, api_token):
             'vacancies_found': page_payload['total'],
             'vacancies_processed': len(vacancies),
             'average_salary': average_payments
-            }
+        }
         languages[text] = language
     return languages
