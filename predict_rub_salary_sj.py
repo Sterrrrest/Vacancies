@@ -6,9 +6,9 @@ from statistics import mean
 from functions import predict_rub_salary
 
 
-def predict_rub_salary_sj(language_names, token_api):
+def predict_rub_salary_sj(language_names, api_token):
     url = 'https://api.superjob.ru/2.0/vacancies/'
-    header = {'X-Api-App-Id': token_api}
+    header = {'X-Api-App-Id': api_token}
     salaries = []
     languages = {}
     for text in language_names:

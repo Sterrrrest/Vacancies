@@ -10,7 +10,7 @@ from dotenv import load_dotenv, find_dotenv
 if __name__ == '__main__':
 
     load_dotenv(find_dotenv())
-    token_api = os.environ['SUPER_JOB_KEY']
+    api_token = os.environ['SUPER_JOB_KEY']
 
     language_names = [
       'программист Python',
