@@ -32,7 +32,6 @@ def predict_rub_salary_sj(vacancies_language_names, api_token):
                  vacancy['payment_to']) and vacancy['currency'] == 'rub':
                 vacancies.append(predict_rub_salary(vacancy['payment_from'], vacancy['payment_to']))
         average_payments = int(mean(vacancies))
-        salaries.append(average_payments)
         language = {
             'vacancies_found': page_payload['total'],
             'vacancies_processed': len(vacancies),
