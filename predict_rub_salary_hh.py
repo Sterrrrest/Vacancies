@@ -4,9 +4,9 @@ from statistics import mean
 from functions import predict_rub_salary
 
 
-def predict_rub_salary_hh(language_names):
+def predict_rub_salary_hh(vacancies_language_names):
     languages = {}
-    for text in language_names:
+    for text in vacancies_language_names:
         url = 'https://api.hh.ru/vacancies'
         area = '1'
         period = 30

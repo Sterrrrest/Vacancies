@@ -1,12 +1,12 @@
 from terminaltables import AsciiTable
 
 
-def get_table(languages, language_names, title):
+def get_table(languages, vacancies_language_names, title):
     final_table = [('Язык программирования',
                     'Вакансий найдено',
                     'Вакансий обработано',
                     'Средняя зарплата'), ]
-    for text in language_names:
+    for text in vacancies_language_names:
         table_data = (text, languages[text]['vacancies_found'], languages[text]['vacancies_processed'],
                       languages[text]['average_salary'],)
         final_table.append(table_data)
