@@ -25,12 +25,12 @@ python3 main.py
 Запускает программу по поиску вакансий.
 
 ```
-predict_rub_salary_hh
+python3 predict_rub_salary_hh
 ```
 Ищет вакансии на сайте HH.ru.
 
 ```
-predict_rub_salary_sj
+python3 predict_rub_salary_sj
 ``` 
 Ищет вакансии на сайте SuperJob.ru.
 
