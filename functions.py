@@ -6,9 +6,9 @@ def get_table(languages, vacancies_language_names, title):
                     'Вакансий найдено',
                     'Вакансий обработано',
                     'Средняя зарплата'), ]
-    for text in vacancies_language_names:
-        table_data = (text, languages[text]['vacancies_found'], languages[text]['vacancies_processed'],
-                      languages[text]['average_salary'],)
+    for language_name in vacancies_language_names:
+        table_data = (language_name, languages[language_name]['vacancies_found'], languages[language_name]['vacancies_processed'],
+                      languages[language_name]['average_salary'],)
         final_table.append(table_data)
 
     table_instance = AsciiTable(final_table, title)

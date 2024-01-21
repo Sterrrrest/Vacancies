@@ -6,7 +6,7 @@ from functions import predict_rub_salary
 
 def predict_rub_salary_hh(vacancies_language_names):
     languages = {}
-    for text in vacancies_language_names:
+    for language_name in vacancies_language_names:
         url = 'https://api.hh.ru/vacancies'
         area = '1'
         period = 30
@@ -16,7 +16,7 @@ def predict_rub_salary_hh(vacancies_language_names):
         vacancies = []
         while page < pages_number:
             payLoad = {'page': page,
-              'text': text,
+              'text': language_name,
               'area': area,
               'period': period}
             response = requests.get(url, params=payLoad, headers=header)
@@ -33,5 +33,5 @@ def predict_rub_salary_hh(vacancies_language_names):
             'vacancies_processed': len(vacancies),
             'average_salary': average_payments
         }
-        languages[text] = language
+        languages[language_name] = language
     return languages

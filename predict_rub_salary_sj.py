@@ -11,14 +11,14 @@ def predict_rub_salary_sj(vacancies_language_names, api_token):
     header = {'X-Api-App-Id': api_token}
     salaries = []
     languages = {}
-    for text in vacancies_language_names:
+    for language_name in vacancies_language_names:
         vacancies = []
         count = 100
         page = 5
         period = 30
         town_id = 4
         payLoad = {
-            'keyword': text,
+            'keyword': language_name,
             'count': count,
             'page': page,
             'period': period,
@@ -37,5 +37,5 @@ def predict_rub_salary_sj(vacancies_language_names, api_token):
             'vacancies_processed': len(vacancies),
             'average_salary': average_payments
         }
-        languages[text] = language
+        languages[language_name] = language
     return languages
