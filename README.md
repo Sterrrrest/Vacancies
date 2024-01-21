@@ -24,16 +24,6 @@ python3 main.py
 ``` 
 Запускает программу по поиску вакансий.
 
-```
-python3 predict_rub_salary_hh
-```
-Ищет вакансии на сайте HH.ru.
-
-```
-python3 predict_rub_salary_sj
-``` 
-Ищет вакансии на сайте SuperJob.ru.
-
 
 Примеры запуска скриптов
 =
