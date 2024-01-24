@@ -1,14 +1,14 @@
 from terminaltables import AsciiTable
 
 
-def get_table(languages, vacancies_language_names, title):
+def get_table(languages, title):
     final_table = [('Язык программирования',
                     'Вакансий найдено',
                     'Вакансий обработано',
                     'Средняя зарплата'), ]
-    for key, value in languages.items():
-        table_data = (key, value['vacancies_found'], value['vacancies_processed'], value['average_salary'], )
-    final_table.append(table_data)
+    for language, language_stats in languages.items():
+        table_data = (language, language_stats['vacancies_found'], language_stats['vacancies_processed'], language_stats['average_salary'], )
+        final_table.append(table_data)
 
     table_instance = AsciiTable(final_table, title)
     table_instance.justify_columns[2] = 'right'
