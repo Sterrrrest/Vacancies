@@ -6,10 +6,9 @@ def get_table(languages, vacancies_language_names, title):
                     'Вакансий найдено',
                     'Вакансий обработано',
                     'Средняя зарплата'), ]
-    for language_name in vacancies_language_names:
-        for key, value in languages.items():
-            table_data = (language_name, value['vacancies_found'], value['vacancies_processed'], value['average_salary'], )
-        final_table.append(table_data)
+    for key, value in languages.items():
+        table_data = (key, value['vacancies_found'], value['vacancies_processed'], value['average_salary'], )
+    final_table.append(table_data)
 
     table_instance = AsciiTable(final_table, title)
     table_instance.justify_columns[2] = 'right'
